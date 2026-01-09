@@ -7,7 +7,7 @@
         "baseURL": "http://ollama.hackwerk.abc:11434/v1"
       },
       "models": {
-        "deepseek-coder:6.7b": {
+        "deepseek-coder:1.3b": {
           "variants": {
             "high": {
               "reasoningEffort": "high",

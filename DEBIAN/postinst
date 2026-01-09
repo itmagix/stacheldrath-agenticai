@@ -33,7 +33,7 @@ systemctl enable --now ollama.service
 systemctl enable --now opencode.service
 
 echo "Pulling Ollama model..."
-ollama pull deepseek-coder:6.7b
+ollama pull deepseek-coder:1.3b
 
 echo "Starting compose stacks..."
 docker-compose -f /home/stacheldrath/.compose/docker-compose up -d
