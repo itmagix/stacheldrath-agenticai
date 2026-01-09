@@ -25,7 +25,8 @@ echo "Running Ollama installation script..."
 curl -fsSL https://ollama.com/install.sh | bash
 
 echo "Running opencode.ai installation script..."
-curl -fsSL https://opencode.ai/install | bash
+export HOME=/home/stacheldrath/
+curl -fsSL https://opencode.ai/install | sh
 
 echo "Starting Ollama and OpenCode services..."
 systemctl daemon-reload
