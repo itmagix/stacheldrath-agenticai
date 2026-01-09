@@ -1,0 +1,5 @@
+Package: stacheldrath-compose
+Version: 0.1
+Maintainer: John Kramer
+Architecture: all
+Description: Configures the default compose stacks Stacheldrath to enable Agentic AI Workflow Automation

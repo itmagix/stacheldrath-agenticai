@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -e
+
+echo "Installing curl if not already installed..."
+
+# Check if curl is installed
+if ! command -v curl &> /dev/null; then
+    echo "curl not found, installing..."
+    if command -v apt-get &> /dev/null; then
+        apt-get update
+        apt-get install -y curl
+    elif command -v apt &> /dev/null; then
+        apt update
+        apt install -y curl
+    else
+        echo "Error: Cannot install curl. Neither apt-get nor apt found."
+        exit 1
+    fi
+else
+    echo "curl is already installed"
+fi
+
+echo "Running Ollama installation script..."
+curl -fsSL https://ollama.com/install.sh | bash
+
+echo "Running opencode.ai installation script..."
+curl -fsSL https://opencode.ai/install | bash
+
+echo "Starting Ollama and OpenCode services..."
+systemctl daemon-reload
+systemctl enable --now ollama.service
+systemctl enable --now opencode.service
+
+echo "Pulling Ollama model..."
+ollama pull deepseek-coder:6.7b
+
+echo "Starting compose stacks..."
+docker-compose -f /home/stacheldrath/.compose/docker-compose up -d
+
+echo "Installation complete!"
+
+exit 0

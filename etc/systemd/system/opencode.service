@@ -1,0 +1,14 @@
+[Unit]
+Description=Opencode Service
+After=network-online.target
+
+[Service]
+ExecStart=/home/stacheldrath/.opencode/bin/opencode serve --hostname 0.0.0.0 --port 8082 --log-level DEBUG
+User=stacheldrath
+Group=stacheldrath
+Restart=always
+RestartSec=3
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/home/stacheldrath/.opencode/bin"
+
+[Install]
+WantedBy=default.target
