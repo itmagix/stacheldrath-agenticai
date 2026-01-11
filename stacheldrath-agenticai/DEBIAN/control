@@ -2,4 +2,4 @@ Package: stacheldrath-agenticai
 Version: 0.1
 Maintainer: John Kramer
 Architecture: all
-Description: Configures the default compose stacks Stacheldrath to enable Agentic AI Workflow Automation
+Description: Configures the AI LLM engines for Stacheldrath to enable Agentic AI Workflow Automation
