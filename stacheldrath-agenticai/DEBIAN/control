@@ -3,3 +3,4 @@ Version: 0.1
 Maintainer: John Kramer
 Architecture: all
 Description: Configures the AI LLM engines for Stacheldrath to enable Agentic AI Workflow Automation
+Depends: curl
