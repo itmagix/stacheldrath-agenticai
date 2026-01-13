@@ -2,6 +2,9 @@
 
 set -e
 
+echo "Setting permissions for stacheldrath user..."
+chown stacheldrath:stacheldrath -R /home/stacheldrath/.config
+
 echo "Running Ollama installation script..."
 curl -fsSL https://ollama.com/install.sh | bash
 
