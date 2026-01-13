@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+echo "Setting permissions for stacheldrath user..."
+chown stacheldrath:stacheldrath -R /home/stacheldrath/.config
+
+exit 0
